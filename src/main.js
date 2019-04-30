@@ -1,9 +1,9 @@
-import App from './App.svelte';
+import App from './App.svelte'
 
 const app = new App({
-	target: document.body
-});
+  target: document.body
+})
 
-window.app = app;
+window.app = app
 
-export default app;
+export default app

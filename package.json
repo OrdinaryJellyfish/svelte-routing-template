@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "devDependencies": {
     "@vue/preload-webpack-plugin": "^1.1.0",
+    "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",
     "page": "^1.11.4",
@@ -18,7 +25,11 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server --content-base public --history-api-fallback"
+    "dev": "webpack-dev-server --content-base public --history-api-fallback",
+    "lint": "eslint . --ext .js,.svelte",
+    "fix": "eslint . --ext .js,.svelte --fix"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint-plugin-svelte3": "^1.0.0"
+  }
 }

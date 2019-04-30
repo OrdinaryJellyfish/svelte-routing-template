@@ -1,9 +1,10 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin')
+const path = require('path')
 
-const mode = process.env.NODE_ENV || 'development';
-const prod = mode === 'production';
+const mode = process.env.NODE_ENV || 'development'
+const prod = mode === 'production'
 
 module.exports = {
   entry: './src/main.js',
@@ -11,7 +12,7 @@ module.exports = {
     extensions: ['.mjs', '.js', '.svelte']
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, './dist'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].js',
     publicPath: '/'
@@ -51,8 +52,8 @@ module.exports = {
       template: 'public/index.html',
       minify: prod
         ? {
-            collapseWhitespace: true
-          }
+          collapseWhitespace: true
+        }
         : false
     }),
     new PreloadWebpackPlugin({
@@ -60,4 +61,4 @@ module.exports = {
     })
   ],
   devtool: prod ? false : 'source-map'
-};
+}

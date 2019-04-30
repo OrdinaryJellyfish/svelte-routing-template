@@ -1,6 +1,6 @@
 <svelte:component this={$page.component} {...$page.props} />
 <script>
-	import router, { page } from "./router";
+  import router, { page } from './router'
 
-	router.start();
+  router.start()
 </script>
