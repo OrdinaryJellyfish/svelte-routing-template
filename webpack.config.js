@@ -49,7 +49,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
-      minify: prod ? true : false
+      minify: prod
+        ? {
+            collapseWhitespace: true
+          }
+        : false
     }),
     new PreloadWebpackPlugin({
       rel: 'prefetch'
